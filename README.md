@@ -1,9 +1,9 @@
 ## Introduction
-volksdep is an open-source toolbox for deploying and accelerating PyTorch, Onnx and Tensorflow models with TensorRT.
+volksdep is an open-source toolbox for deploying and accelerating PyTorch, ONNX and TensorFlow models with TensorRT.
 
 ## Features
 - **Auto conversion and acceleration**\
-    volksdep can accelerate PyTorch, Onnx and Tensorflow models using TensorRT with 
+    volksdep can accelerate PyTorch, ONNX and TensorFlow models using TensorRT with 
     only some few codes.
 
 - **Benchmark of throughput, latency and metric**\
@@ -78,7 +78,7 @@ trt_model = torch2trt(model, dummy_input)
 More available arguments of torch2trt are detailed in 
 [volksdep/converters/torch2trt.py](https://github.com/Media-Smart/volksdep/blob/master/volksdep/converters/torch2trt.py)
 
-#### Onnx to TensorRT
+#### ONNX to TensorRT
 ```shell
 import torch
 from volksdep.converters import onnx2trt
@@ -100,8 +100,8 @@ trt_model = onnx2trt(model)
 More available arguments of onnx2trt are detailed in 
 [volksdep/converters/onnx2trt.py](https://github.com/Media-Smart/volksdep/blob/master/volksdep/converters/onnx2trt.py)
 
-#### Other frameworks to Onnx
-1. PyTorch to Onnx
+#### Other frameworks to ONNX
+1. PyTorch to ONNX
 ```shell
 import torch
 import torchvision
@@ -114,9 +114,9 @@ torch2onnx(model, dummy_input, 'resnet18.onnx')
 More available arguments of torch2onnx are detailed in 
 [volksdep/converters/torch2onnx.py](https://github.com/Media-Smart/volksdep/blob/master/volksdep/converters/torch2onnx.py)
 
-2. [Tensorflow to Onnx](https://github.com/onnx/tensorflow-onnx)
+2. [TensorFlow to ONNX](https://github.com/onnx/tensorflow-onnx)
 
-3. [Keras to Onnx](https://github.com/onnx/keras-onnx)
+3. [Keras to ONNX](https://github.com/onnx/keras-onnx)
 
 ### Execute inference
 ```shell
@@ -171,7 +171,7 @@ benchmark(model, (1, 3, 224, 224), dtypes=['fp32', 'fp16', 'int8'])
 # benchmark(model, (1, 3, 224, 224), int8_calibrator=dummy_calibrators, dataset=dummy_dataset, metric=metric)
 ```
 
-#### Onnx benchmark
+#### ONNX benchmark
 ```shell
 import torch
 import torchvision
