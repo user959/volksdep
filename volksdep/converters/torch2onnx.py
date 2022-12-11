@@ -34,8 +34,7 @@ def torch2onnx(
 
     if isinstance(dummy_input, tuple):
         dummy_input = list(dummy_input)
-    dummy_input = utils.to(dummy_input, 'cuda')
-    model.eval().cuda()
+    model.eval()
     with torch.no_grad():
         output = model(dummy_input)
 
@@ -61,4 +60,4 @@ def torch2onnx(
         verbose=verbose,
         dynamic_axes=dynamic_axes)
 
-    torch.cuda.empty_cache()
+    # torch.cuda.empty_cache()
