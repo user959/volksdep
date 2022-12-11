@@ -34,6 +34,7 @@ def torch2onnx(
 
     if isinstance(dummy_input, tuple):
         dummy_input = list(dummy_input)
+    dummy_input = utils.to(dummy_input, 'cpu')
     model.eval()
     with torch.no_grad():
         output = model(dummy_input)
